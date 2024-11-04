@@ -1,0 +1,512 @@
+/* src/components/pages/Dashboard.css */
+
+/* Dashboard Modal Specific Styles */
+.dashboard-modal-content {
+    background-color: #f5f8fa; /* Light gray background similar to HubSpot */
+    padding: 30px;
+    border-radius: 6px;
+    max-width: 1000px;
+    margin: 60px auto;
+}
+
+.dashboard-modal-content h2 {
+    font-family: var(--font-secondary);
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Dashboard Widget */
+.dashboard-widget {
+    background-color: #ffffff;
+    border: 1px solid #dce0e0;
+    overflow: auto;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-widget h3 {
+    font-size: 18px;
+    color: #33475b; /* HubSpot's dark text color */
+    margin-bottom: 15px;
+}
+
+.dashboard-widget canvas {
+    width: 100%;
+    height: 200px;
+}
+
+/* Simulated Funnel Chart */
+.funnel-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.funnel-stage {
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 10px;
+    margin: 5px 0;
+    text-align: center;
+    border-radius: 4px;
+}
+
+/* Simulated Pie Chart */
+.pie-chart {
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+.pie {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+        var(--secondary-color) 0% 40%,
+        #ffce85 40% 65%,
+        #a4dbcc 65% 85%,
+        #dce0e0 85% 100%
+    );
+}
+
+.pie-legend {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.pie-legend li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.legend-color {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.source-organic {
+    background-color: var(--secondary-color);
+}
+
+.source-paid {
+    background-color: #ffce85;
+}
+
+.source-social {
+    background-color: #a4dbcc;
+}
+
+.source-other {
+    background-color: #dce0e0;
+}
+
+/* Simulated Bar Chart */
+.bar-chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    height: 150px;
+}
+
+.bar {
+    width: 20%;
+    background-color: var(--accent-color);
+    text-align: center;
+    color: #fff;
+    margin: 0 5px;
+    border-radius: 4px 4px 0 0;
+}
+
+/* Simulated Side-by-Side Bar Chart */
+.side-by-side-bar-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bar-group {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 150px;
+    align-items: flex-end;
+}
+
+.bar.enriched {
+    background-color: var(--secondary-color);
+}
+
+.bar.non-enriched {
+    background-color: #a4dbcc;
+}
+
+.bar-legend {
+    margin-top: 10px;
+}
+
+.bar-legend .legend-color {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+/* Simulated Stacked Bar Chart */
+.stacked-bar-chart {
+    display: flex;
+    justify-content: center;
+    height: 150px;
+}
+
+.stacked-bar {
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.stacked-bar .bar {
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+.bar.hot {
+    background-color: #ff7a59;
+}
+
+.bar.warm {
+    background-color: #ffce85;
+}
+
+.bar.cold {
+    background-color: #a4dbcc;
+}
+
+/* Adjust Close Button for Dashboard Modal */
+.dashboard-modal-content .close-button {
+    color: #33475b;
+    font-size: 24px;
+    top: 20px;
+    right: 20px;
+}
+
+.dashboard-modal-content .close-button:hover {
+    color: #ff7a59; /* HubSpot's orange accent color */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: var(--padding);
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .card {
+        margin: var(--margin) 0;
+    }
+
+    .modal-content {
+        margin: 30px 10px;
+    }
+}
+/* src/components/pages/Dashboard.css */
+
+/* Dashboard Content Specific Styles */
+.dashboard-content {
+    padding: 20px;
+    background-color: #f5f8fa; /* Light gray background similar to HubSpot */
+    border-radius: 6px;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow-y: auto; /* Allow vertical scrolling if content exceeds */
+    height: calc(90vh - 60px); /* Adjust as needed */
+}
+
+/* Heading Styles */
+.dashboard-content h2 {
+    font-family: var(--font-secondary);
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Dashboard Widget */
+.dashboard-widget {
+    background-color: #ffffff;
+    border: 1px solid #dce0e0;
+    overflow: hidden;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-widget h3 {
+    font-size: 18px;
+    color: #33475b; /* HubSpot's dark text color */
+    margin-bottom: 15px;
+}
+
+.dashboard-widget canvas {
+    width: 100%;
+    height: 200px;
+}
+
+/* Simulated Funnel Chart */
+.funnel-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.funnel-stage {
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 10px;
+    margin: 5px 0;
+    text-align: center;
+    border-radius: 4px;
+}
+
+/* Simulated Pie Chart */
+.pie-chart {
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+.pie {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+        var(--secondary-color) 0% 40%,
+        #ffce85 40% 65%,
+        #a4dbcc 65% 85%,
+        #dce0e0 85% 100%
+    );
+}
+
+.pie-legend {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.pie-legend li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.legend-color {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.source-organic {
+    background-color: var(--secondary-color);
+}
+
+.source-paid {
+    background-color: #ffce85;
+}
+
+.source-social {
+    background-color: #a4dbcc;
+}
+
+.source-other {
+    background-color: #dce0e0;
+}
+
+/* Simulated Bar Chart */
+.bar-chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    height: 150px;
+}
+
+.bar-chart .bar {
+    width: 20%;
+    background-color: var(--accent-color);
+    text-align: center;
+    color: #fff;
+    margin: 0 5px;
+    border-radius: 4px 4px 0 0;
+}
+
+/* Simulated Side-by-Side Bar Chart */
+.side-by-side-bar-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bar-group {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 150px;
+    align-items: flex-end;
+}
+
+.bar.enriched {
+    background-color: var(--secondary-color);
+}
+
+.bar.non-enriched {
+    background-color: #a4dbcc;
+}
+
+.bar-legend {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bar-legend .legend-color {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+/* Simulated Stacked Bar Chart */
+.stacked-bar-chart {
+    display: flex;
+    justify-content: center;
+    height: 150px;
+}
+
+.stacked-bar {
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.stacked-bar .bar {
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+
+.bar.hot {
+    background-color: #ff7a59;
+}
+
+.bar.warm {
+    background-color: #ffce85;
+}
+
+.bar.cold {
+    background-color: #a4dbcc;
+}
+
+/* Adjust Close Button for Dashboard Modal */
+.dashboard-content .close-button {
+    color: #33475b;
+    font-size: 24px;
+    top: 20px;
+    right: 20px;
+}
+
+.dashboard-content .close-button:hover {
+    color: #ff7a59; /* HubSpot's orange accent color */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: var(--padding);
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .card {
+        margin: var(--margin) 0;
+    }
+
+    .modal-content {
+        margin: 30px 10px;
+    }
+}
