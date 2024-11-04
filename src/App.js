@@ -110,11 +110,6 @@ function App() {
     }
   };
 
-  // Effect to log initial mount
-  useEffect(() => {
-    console.log(`App Component Mounted. isModalOpen: ${isModalOpen}, currentSection: ${currentSection}`);
-  }, []);
-
   // Effect to log state changes
   useEffect(() => {
     console.log(`Modal State Updated. isModalOpen: ${isModalOpen}, currentSection: ${currentSection}`);
